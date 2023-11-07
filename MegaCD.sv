@@ -196,23 +196,23 @@ wire [7:0] arx,ary;
 always_comb begin
 	case(res) // {V30, H40}
 		2'b00: begin // 256 x 224
-			arx = 8'd64;
+			arx = 8'd192;
 			ary = 8'd49;
 		end
 
 		2'b01: begin // 320 x 224
-			arx = status[30] ? 8'd10: 8'd64;
+			arx = status[30] ? 8'd30: 8'd192;
 			ary = status[30] ? 8'd7 : 8'd49;
 		end
 
 		2'b10: begin // 256 x 240
 			arx = 8'd128;
-			ary = 8'd105;
+			ary = 8'd45;
 		end
 
 		2'b11: begin // 320 x 240
 			arx = status[30] ? 8'd4 : 8'd128;
-			ary = status[30] ? 8'd3 : 8'd105;
+			ary = status[30] ? 8'd1 : 8'd45;
 		end
 	endcase
 end
